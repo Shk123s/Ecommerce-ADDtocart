@@ -1,0 +1,221 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    
+}
+body
+{
+    background-color: rgb(218, 217, 217);
+}
+ .cartbg
+{
+    background-color: rgb(255, 255, 255) ;
+    width: 500px;
+    height: 800px;
+    float: left;
+    display: flex;
+    margin-left: -14.5%;
+    margin-top: 0.3%;
+    z-index: 0;
+    position: absolute;
+    transition: all .5s ease-in-out;
+    
+} 
+/* .divcartpopup
+{
+    background-color: rgb(255, 248, 248);
+    width: 70px;
+    height: 30px;
+} */
+.containernavbar
+{
+    background-color: rgb(255, 255, 255) ;
+    height: 5vh;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    
+}
+.containernavbar ul
+{
+    display: flex;
+    flex-direction: row;
+    
+}
+.containernavbar ul li  img
+{
+    width: 35px;
+    height: 35px;
+    margin-top: -11px;
+}
+.card-container
+{  display: flex;
+    flex-flow: row wrap;
+    margin: 50px;
+    justify-content: space-between;
+    margin-right: 122px;
+    /* align-items: center; */
+}
+.containernavbar ul li 
+{
+    list-style: none;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.card
+{  
+    width: 250px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: blue; */
+    border:2px solid black ;
+    /* border-radius: 5%; */
+    overflow: hidden;
+    background-color: rgb(250, 246, 246);
+}
+.card img
+{
+    width: 200px;
+    height: 160px;
+}
+.card-container .card
+{
+    justify-content: space-between;
+    margin-left:10% ;
+    margin-bottom: 15px;
+}
+.card-btn button
+{
+    background-color: black;
+    color: white;
+   
+}
+button
+{
+    width: 200px;
+    height: 40px;
+    margin-bottom: 4px;
+    /* border-radius: 10px; */
+}
+  /* cart  bg */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+  /* cart  bg */
+  /* cart content */
+  .cartContent
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+   
+  }
+  .cardcart
+  {
+    background-color: #f1f1f1;
+    color: #111;
+    border: 2px solid black;
+    display: flex;
+    width: 450px;
+    height: 100px;
+  
+   
+  }
+  span {cursor:pointer; }
+  .number{
+      margin:100px;
+  }
+  .minus, .plus{
+      width:20px;
+      height:20px;
+      background:#f2f2f2;
+      border-radius:4px;
+      
+      border:1px solid #ddd;
+display: inline-block;
+vertical-align: middle;
+text-align: center;
+  }
+  input{
+      height:24px;
+width: 50px;
+text-align: center;
+font-size: 26px;
+      border:1px solid #ddd;
+      border-radius:4px;
+display: inline-block;
+vertical-align: middle;
+  }   
+  .cardcart  button  
+  { height: 20px;
+    width: 20px;
+    margin-left: 20px;
+    margin-top: 29px;
+    justify-content: space-between;
+  }
+  .cardcart  .img  
+  { height: 20px;
+    width: 20px;
+    margin-left: 20px;
+    /* margin-top: 3px; */
+    justify-content: space-between;
+  }
+ .cardcart h1{
+    margin-top: 20px;
+ }
+ .cardcart .quantity{
+    margin-top: 30px;
+    margin-left: 10px;
+ }
+
+ .cardcart .productSize{
+    margin-top: 30px;
+    margin-left: 10px;
+ }
+ .cardcart  .card-price{
+    margin-top: 30px;
+    margin-left: 20px;
+ }
+  /* cart content */
+  /* .btnblock{
+    display: none;
+  } */
