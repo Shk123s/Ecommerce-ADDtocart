@@ -1,30 +1,4 @@
-// function popupcart()
-// {  
-//     let element = document.getElementById("cartpopup");
-//     let table = document.getElementsByClassName("cartbg");
-    
-//     element.classList.toggle("cartbg")
-  
-//   // Add some sample table content
-//   table.innerHTML = `
-//     <tr>
-//       <th>Product</th>
-//       <th>Price</th>
-//     </tr>
-//     <tr>
-//       <td>Product 1</td>
-//       <td>$10</td>
-//     </tr>
-//     <tr>
-//       <td>Product 2</td>
-//       <td>$15</td>
-//     </tr>
-//     <!-- Add more rows as needed -->
-//   `;
-  
- 
-//     // alert("hiii");
-// }
+
 function openNav() {
   document.getElementById("mySidenav").style.width = "450px";
 }
@@ -32,16 +6,6 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
-// let uservalueTitle = document.querySelector(".productSize")
-//  console.log(uservalueTitle.innerHTML);
-//  let uservalueShoes = document.querySelector("#size")
-//  console.log(uservalueShoes.innerHTML);
-//  let uservaluePrice = document.querySelector("#price")
-//  console.log(uservaluePrice.innerHTML);
- 
-//  const Userstorevalue = [uservaluePrice,uservalueShoes,uservalueTitle].innerHTML
-//  console.log(Userstorevalue)
-
 let cartButton = document.querySelectorAll(".cartButton")
 // console.log(cartButton)
 cartButton.forEach((btn)=>{
@@ -59,14 +23,12 @@ let productPrize = productContainer.querySelector(".productPrize").innerHTML;
 let productTitle = productContainer.querySelector(".productTitle").innerHTML;
 let  productid = Math.random().toString(36).substring(7);
 let productImg = productContainer.querySelector(".productImg").src;
-  // console.log(`<img src="${productImg}">`)
+// console.log(`<img src="${productImg}">`)
 // console.log(productImg);
 // console.log(productSize)
 // console.log(productPrize)
 // console.log(productTitle)
-
-
-  let newproduct = {productTitle,productSize,productPrize,productid,productImg};
+ let newproduct = {productTitle,productSize,productPrize,productid,productImg};
   // console.log(newproduct)
   // if (itemSize.some(product => product.productTitle === newproduct.productTitle)) {
   //   alert("item already added")
@@ -110,12 +72,7 @@ function createCartProduct(productPrize,productSize,productTitle,productid,produ
 
   `
 }
-
-
 function removeItem(element) {
-   
- 
-  // let title = document.getElementById("ff").parentElement;
   // console.log(title)
   const cardId = element.getAttribute("data-cardID");
   // console.log(cardId)
@@ -125,11 +82,8 @@ function removeItem(element) {
   itemSize.splice(removeElmId,1);
   // console.log(vcc);
   cardElement.remove();
-    // console.log(itemSize)
-  //  title.remove();
   //  console.log(itemSize)
-
-  
+ 
 }
 let PriceValue = document.querySelector(".PriceValue"
 ).innerHTML = 0;
