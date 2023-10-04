@@ -90,7 +90,7 @@ body
     margin-bottom: 15px;
 }
 .card-btn button
-{
+{   cursor: pointer;
     background-color: black;
     color: white;
    
@@ -219,3 +219,33 @@ vertical-align: middle;
   /* .btnblock{
     display: none;
   } */
+  .total 
+  { color: rgb(0, 0, 0);
+    background-color: white;
+    width: 500px;
+    height: 70px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+  }
+  .cartContent .total p
+  {
+   margin-top: 16px;
+   font-size: 180%;
+   font-weight: 500;
+  }
+  .total h1
+  {
+    margin: 0px 0px 0px 280px ;
+    padding: 15px;
+  }
+   button img{
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
+}
+#removecard
+{
+  margin-top: -5px;
+}

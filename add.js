@@ -50,30 +50,38 @@ cartButton.forEach((btn)=>{
 let itemSize =[];
 function addCart()
 {
+
 let productContainer = this.parentElement.parentElement;
+
 // console.log(productContainer)
 let productSize = productContainer.querySelector(".productSize").innerHTML;
 let productPrize = productContainer.querySelector(".productPrize").innerHTML;
 let productTitle = productContainer.querySelector(".productTitle").innerHTML;
 let  productid = Math.random().toString(36).substring(7);
+let productImg = productContainer.querySelector(".productImg").src;
+  // console.log(`<img src="${productImg}">`)
+// console.log(productImg);
 // console.log(productSize)
 // console.log(productPrize)
 // console.log(productTitle)
 
 
-  let newproduct = {productTitle,productSize,productPrize,productid};
+  let newproduct = {productTitle,productSize,productPrize,productid,productImg};
   // console.log(newproduct)
-  if (itemSize == itemSize.find(element => {
-    element.productTitle == newproduct.productTitle
-  })) {
-    console.log("item already added")
+  // if (itemSize.some(product => product.productTitle === newproduct.productTitle)) {
+  //   alert("item already added")
+      
+  //   }
+  if (itemSize.find(elm => elm.productTitle === newproduct.productTitle )) {
+    alert("item already added")
+    
   }
   else
   {
   itemSize.push(newproduct);
    console.log(itemSize)
   
-  let newproductElement = createCartProduct(productPrize, productSize, productTitle,productid)
+  let newproductElement = createCartProduct(productPrize, productSize, productTitle,productid,productImg)
 let element = document.createElement("div");
 element.innerHTML = newproductElement;
 let createBasket = document.querySelector(".cartContent");
@@ -81,22 +89,19 @@ createBasket.append(element);
   }
 }
 
-function createCartProduct(productPrize,productSize,productTitle,productid)
+function createCartProduct(productPrize,productSize,productTitle,productid,productImg)
 { 
   return `<div id=${productid} class="cardcart" >
  
+  <img id="productImg" src="${productImg}" alt="" srcset="">
   <h1 id="ff" class="productTitleC">${productTitle}</h1>
   <label for="shoes" class="productSize">${productSize}</label>
-   <div class="quantity"> 
-   <span class="minus">-</span>
-   <input type="text" value="1"/>
-   <span class="plus">+</span>
-   </div>
 <div class="card-price">
 <p1>price :<span class="productPrize">${productPrize}</span></p1>
 </div>
 <div id="removecard" >
-<button type="button" class="btn" onclick="removeItem(this)" data-cardID=${productid}>Remove</button>
+<button type="button" class="btn" onclick="removeItem(this)" data-cardID=${productid}><img src="close.png"/></button>
+
 </div>
 
 
@@ -126,3 +131,9 @@ function removeItem(element) {
 
   
 }
+let PriceValue = document.querySelector(".PriceValue"
+).innerHTML = 0;
+let ProductPrice = document.querySelector(".productPrize"
+).innerHTML = 0;
+console.log(PriceValue);
+console.log(ProductPrice);
