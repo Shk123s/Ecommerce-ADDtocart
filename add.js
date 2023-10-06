@@ -7,16 +7,50 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
 let cartButton = document.querySelectorAll(".cartButton")
-// console.log(cartButton)
+
 cartButton.forEach((btn)=>{
   btn.addEventListener("click",addCart)
+  
 })
+cartButton.forEach((btn) => {
+  btn.addEventListener("click", function () {
+    // Change the text of the clicked button to "Added"
+    btn.textContent = "Added";
+  });
+});
 let itemSize =[];
+// let totalcard = document.querySelector(".total").style.display = "none"
+function PriceDisplay()
+{  
+   PriceArray = [];
+  let FinalPricetobeDisplay= 0;
+ 
+let id = document.getElementsByClassName("productPrizeCart"
+);
+for (const element of id) {
+  let final = element.textContent
+    let ToInt = parseInt(final); 
+    PriceArray.push(ToInt);
+    // console.log(PriceArray)
+
+}
+for(let i= 0;i<PriceArray.length;i++)
+    {   FinalPricetobeDisplay = FinalPricetobeDisplay + PriceArray[i];
+    }
+  // console.log(FinalPricetobeDisplay);
+    let totalvalue = document.querySelector(".PriceValue"
+  ).innerHTML =FinalPricetobeDisplay ;
+//   if (totalvalue <1) {
+//     document.querySelector(".total").style.display ="none";
+//  }   
+  
+}
 function addCart()
 {
 
 let productContainer = this.parentElement.parentElement;
-
+// let totalcard = document.querySelector(".total").style.display = "block"
+// let totalvalue = document.querySelector(".PriceValue").style.display = "block"
 // console.log(productContainer)
 let productSize = productContainer.querySelector(".productSize").innerHTML;
 let productPrize = productContainer.querySelector(".productPrize").innerHTML;
@@ -41,25 +75,28 @@ let productImg = productContainer.querySelector(".productImg").src;
   else
   {
   itemSize.push(newproduct);
-   console.log(itemSize)
+  //  console.log(itemSize)
   
-  let newproductElement = createCartProduct(productPrize, productSize, productTitle,productid,productImg)
-let element = document.createElement("div");
-element.innerHTML = newproductElement;
-let createBasket = document.querySelector(".cartContent");
-createBasket.append(element);
+  let newproductElement = createCartProduct(productPrize, productSize, productTitle,productid,productImg);
+  let element = document.createElement("div");
+  element.innerHTML = newproductElement;
+  let createBasket = document.querySelector(".cartContent");
+  createBasket.append(element);
+  PriceDisplay();
   }
 }
 
+
 function createCartProduct(productPrize,productSize,productTitle,productid,productImg)
-{ 
-  return `<div id=${productid} class="cardcart" >
+{    
+  
+   return `<div id=${productid} class="cardcart" >
  
   <img id="productImg" src="${productImg}" alt="" srcset="">
   <h1 id="ff" class="productTitleC">${productTitle}</h1>
   <label for="shoes" class="productSize">${productSize}</label>
 <div class="card-price">
-<p1>price :<span class="productPrize">${productPrize}</span></p1>
+<p1>price :<span class="productPrizeCart" class="productPrize">${productPrize}</span></p1>
 </div>
 <div id="removecard" >
 <button type="button" class="btn" onclick="removeItem(this)" data-cardID=${productid}><img src="close.png"/></button>
@@ -70,7 +107,8 @@ function createCartProduct(productPrize,productSize,productTitle,productid,produ
 </div>
 
 
-  `
+  ` 
+
 }
 function removeItem(element) {
   // console.log(title)
@@ -80,14 +118,9 @@ function removeItem(element) {
   // console.log(cardElement)
   let removeElmId = itemSize.findIndex((elem)=>{return elem.productid === cardId});
   itemSize.splice(removeElmId,1);
-  // console.log(vcc);
+  PriceArray.splice(removeElmId,1);
+  // console.log(PriceArray)
   cardElement.remove();
-  //  console.log(itemSize)
- 
+  //console.log(itemSize)
+  PriceDisplay();
 }
-let PriceValue = document.querySelector(".PriceValue"
-).innerHTML = 0;
-let ProductPrice = document.querySelector(".productPrize"
-).innerHTML = 0;
-console.log(PriceValue);
-console.log(ProductPrice);
