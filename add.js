@@ -76,7 +76,7 @@ let productImg = productContainer.querySelector(".productImg").src;
   {
   itemSize.push(newproduct);
   //  console.log(itemSize)
-  
+  //ddd
   let newproductElement = createCartProduct(productPrize, productSize, productTitle,productid,productImg);
   let element = document.createElement("div");
   element.innerHTML = newproductElement;
