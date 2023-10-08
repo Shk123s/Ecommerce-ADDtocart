@@ -7,7 +7,7 @@ function closeNav() {
 }
 let counterNotification = 0;   
 let notification = document.querySelector("#notificationcart") ;
-console.log(counterNotification)
+// console.log(counterNotification)
 let cartButton = document.querySelectorAll(".cartButton");
 if (counterNotification == 0 ) {
   notification.style.display ="none"
@@ -16,12 +16,13 @@ if (counterNotification == 0 ) {
 cartButton.forEach((btn) => {
   btn.addEventListener("click", addCart);
 });
-cartButton.forEach((btn) => {
-  btn.addEventListener("click", function () {
-    // Change the text of the clicked button to "Added"
-    btn.textContent = "Added";
-  });
-});
+// cartButton.forEach((btn) => {
+//   btn.addEventListener("click", function () {
+//     // Change the text of the clicked button to "Added"
+//     btn.textContent = "Added";
+//     // btn.textContent = "ADD";
+//   });
+// });
 let itemSize = [];
 // let totalcard = document.querySelector(".total").style.display = "none"
 function PriceDisplay() {
@@ -29,8 +30,8 @@ function PriceDisplay() {
   PriceArray = [];
   let FinalPricetobeDisplay = 0;
 
-  let id = document.getElementsByClassName("productPrizeCart");
-  for (const element of id) {
+  let PriceCart = document.getElementsByClassName("productPrizeCart");
+  for (const element of PriceCart) {
     let final = element.textContent;
     let ToInt = parseInt(final);
     PriceArray.push(ToInt);
@@ -68,7 +69,7 @@ function addCart() {
     productid,
     productImg,
   };
-  // console.log(newproduct)
+  // 2 approche of doing the same thing.
   // if (itemSize.some(product => product.productTitle === newproduct.productTitle)) {
   //   alert("item already added")
 
@@ -77,10 +78,11 @@ function addCart() {
     alert("item already added");
   } else {
     itemSize.push(newproduct);
-    //  console.log(itemSize)
+     console.log(itemSize)
+     this.textContent = "ADDED";
     let newproductElement = createCartProduct(
       productPrize,
-      productSize,
+      productSize,  
       productTitle,
       productid,
       productImg
@@ -106,15 +108,21 @@ function createCartProduct(
   productImg
 ) {
   return `<div id=${productid} class="cardcart" >
- 
+ <div class="DivproductImg">
   <img id="productImg" src="${productImg}" alt="" srcset="">
-  <h1 id="ff" class="productTitleC">${productTitle}</h1>
-  <label for="shoes" class="productSize">${productSize}</label>
+  </div>
+  <div class="productTitleC">
+  <h1 id="ff" >${productTitle}</h1>
+  </div>
+  <div class="cartProductSize">
+
+  <label for="shoes" class="productSize"><span>size: </span>${productSize}</label>
+  </div>
 <div class="card-price">
-<p1>price :<span class="productPrizeCart" class="productPrize">${productPrize}</span></p1>
+<p1>price:<span class="productPrizeCart" class="productPrize">${productPrize}</span></p1>
 </div>
 <div id="removecard" >
-<button type="button" class="btn" onclick="removeItem(this)" data-cardID=${productid}><img src="close.png"/></button>
+<button type="button" class="btn" onclick="removeItem(this)" data-cardID=${productid}><img src="Images/trash.png"/></button>
 
 </div>
 
@@ -136,7 +144,6 @@ function removeItem(element) {
   itemSize.splice(removeElmId, 1);
   PriceArray.splice(removeElmId, 1);
   // console.log(PriceArray)
-  cartButton.textContent = "ADD";
   cardElement.remove();
   counterNotification--;
   notification.innerHTML = counterNotification;
@@ -145,4 +152,5 @@ function removeItem(element) {
   } 
   //console.log(itemSize)
   PriceDisplay();
+
 }

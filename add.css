@@ -7,7 +7,7 @@
 }
 body
 {
-    background-color: rgb(218, 217, 217);
+    background-color: rgb(2, 1, 1);
 }
  .cartbg
 {
@@ -50,6 +50,20 @@ body
     font-weight: bold;
     
 }
+.navbacomp img
+{
+  width: 60px !important;
+  height: 60px!important;
+  margin-top: -19px !important;
+  color: #111;
+}  
+.navbacomp h1{
+  margin-left: 60px;
+  margin-top: -50px;
+  text-decoration: none !important;
+  color: #111;
+}
+
 .containernavbar ul
 {
     display: flex;
@@ -68,6 +82,7 @@ body
     margin: 50px;
     justify-content: space-between;
     margin-right: 122px;
+   
     /* align-items: center; */
 }
 .containernavbar ul li 
@@ -87,9 +102,16 @@ body
     flex-direction: column;
     /* background-color: blue; */
     border:2px solid black ;
-    /* border-radius: 5%; */
+    border-radius: 6%;
     overflow: hidden;
+    box-shadow: 10px 10px  rgb(53, 51, 51);;
     background-color: rgb(250, 246, 246);
+    
+}
+.card:hover
+{
+  scale: 1.1;
+  transition: 1s;
 }
 .card img
 {
@@ -106,6 +128,11 @@ body
 {   cursor: pointer;
     background-color: black;
     color: white;
+    
+}
+.cartButton
+{
+  border-radius: 15px;
 }
 .card-btn button:hover
 {
@@ -117,7 +144,7 @@ button
     width: 200px;
     height: 40px;
     margin-bottom: 4px;
-    /* border-radius: 10px; */
+    /* border-radius: 15px; */
 }
 
   /* cart  bg */
@@ -167,7 +194,7 @@ button
     justify-content: space-around;
    
   }
-  .cardcart
+  .cardcart 
   {
     background-color: #f1f1f1;
     color: #111;
@@ -175,8 +202,15 @@ button
     display: flex;
     width: 450px;
     height: 100px;
-  
-   
+    
+  }
+  .DivproductImg img
+  {
+    width: 100px;
+    height: 100px;
+    position:sticky;
+    margin-left: 5px;
+    overflow: hidden;
   }
   span {cursor:pointer; }
   .number{
@@ -210,33 +244,57 @@ vertical-align: middle;
     margin-top: 29px;
     justify-content: space-between;
   }
-  .cardcart  .img  
-  { height: 20px;
-    width: 20px;
-    margin-left: 20px;
-    /* margin-top: 3px; */
-    justify-content: space-between;
-  }
- .cardcart h1{
-    margin-top: 20px;
- }
- .cardcart .quantity{
-    margin-top: 30px;
-    margin-left: 10px;
- }
 
- .cardcart .productSize{
+ /* .cardcart h1{
+    margin-top: 20px;
+    margin-right: 20px;
+    position:sticky;
+ } */
+ .productTitleC 
+ {
+  margin-top: 20px;
+    width: 115px;
+    height: 12px;
+    margin-right: 15px;
+    position:sticky;
+ }
+ /* .cardcart .quantity{
     margin-top: 30px;
     margin-left: 10px;
+ } */
+ .cartProductSize 
+ {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+  margin-top: 32px;
+  /* margin-left: 10px; */
  }
  .cardcart  .card-price{
     margin-top: 30px;
     margin-left: 20px;
+    position: sticky;
+    font-weight: 700;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
  }
-  /* cart content */
-  /* .btnblock{
-    display: none;
-  } */
+ .card h1
+ { 
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+ }
+ .card-price
+ {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 700;
+ }
+ .card .productSize
+ {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 700;
+ }
+ .cardcart .productSize
+ {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 700;
+ }
   .total 
   { color: rgb(0, 0, 0);
     background-color: white;
@@ -254,25 +312,42 @@ vertical-align: middle;
   }
   .total h1
   {
-    margin: 0px 0px 0px 280px ;
+    margin: 0px 0px 0px 250px ;
     padding: 15px;
   }
   .totalbtn button
   {
     width: 100%;
     text-align: center;
-    margin:752px 0px 0px 0px;
+    margin:800px 0px 0px 0px;
     font-size: 30px;
     font-weight: 500;
     position: absolute;
+    border: 2px solid black;
+    /* top: 900px; */
+    /* margin-top: 800px; */
+  }
+  .totalbtn button:hover{
+    background-color: #111;
+    color: white;
   }
    button img{
   width: 30px;
   height: 30px;
   cursor: pointer;
+  position: static;
   /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
 }
 #removecard
 {
   margin-top: -5px;
+ 
+}
+.imgcard img:hover {
+  /* rotate: 360deg; */
+  transition: 1s;
+  border-radius: 0;
+  transform: rotateY(180deg);
+  border-radius: 10px;
+ scale: 1.5;
 }
